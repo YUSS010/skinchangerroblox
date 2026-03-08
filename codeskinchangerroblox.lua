@@ -2,11 +2,6 @@
 local Instance = Instance or game:GetService("Instance")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
-
--- If Instance is still nil, try getting it from shared env
-if not Instance then
-    Instance = getfenv and getfenv(0).Instance or shared.Instance
-end
 local StarterGui = game:GetService("StarterGui")
 
 -- ══════════════════════════════════════
@@ -135,7 +130,7 @@ local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "AvatarClonerGUI"
 screenGui.ResetOnSpawn = false
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-screenGui.Parent = LocalPlayer.PlayerGui
+screenGui.Parent = game:GetService("CoreGui")
 
 -- Main frame
 local frame = Instance.new("Frame")
