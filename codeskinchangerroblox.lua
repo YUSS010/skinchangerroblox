@@ -1,5 +1,5 @@
 -- Environment compatibility fix for Lua VMs
-local Instance = Instance or game:GetService("Instance")
+local Instance = cloneref and cloneref(Instance) or Instance
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local StarterGui = game:GetService("StarterGui")
