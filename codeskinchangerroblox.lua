@@ -126,7 +126,7 @@ end
 --  GUI
 -- ══════════════════════════════════════
 
-local screenGui = Instance.new("ScreenGui")
+local screenGui = (syn and syn.protect_gui or function(o) return o end)(Instance.new("ScreenGui"))
 screenGui.Name = "AvatarClonerGUI"
 screenGui.ResetOnSpawn = false
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
