@@ -1,8 +1,12 @@
--- Avatar Cloner GUI Script
--- Run this inside your Lua VM (client-sided)
-
+-- Environment compatibility fix for Lua VMs
+local Instance = Instance or game:GetService("Instance")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
+
+-- If Instance is still nil, try getting it from shared env
+if not Instance then
+    Instance = getfenv and getfenv(0).Instance or shared.Instance
+end
 local StarterGui = game:GetService("StarterGui")
 
 -- ══════════════════════════════════════
