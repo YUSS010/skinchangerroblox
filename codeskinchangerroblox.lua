@@ -1,9 +1,9 @@
--- Environment compatibility fix for Lua VMs
-local Instance = cloneref and cloneref(Instance) or Instance
+local env = getfenv and getfenv(0) or _ENV or _G
+local Instance = env.Instance
+local game = env.game
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local StarterGui = game:GetService("StarterGui")
-
 -- ══════════════════════════════════════
 --  CORE CLONE LOGIC
 -- ══════════════════════════════════════
